@@ -4,12 +4,11 @@
 
 #include "BinaryTree.h"
 
-BinaryTree::BinaryTree(std::string *players) {
+BinaryTree::BinaryTree(std::string *players, int numberOfPlayers) {
     for(int i = 0; i < players->size();i++){
         BinaryTree::players[i] = players[i];
-        numberOfPlayers = i;
     }
-    numberOfPlayers ++;
+    this->numberOfPlayers = numberOfPlayers;
 }
 
 std::string* BinaryTree::getPlayers() {
@@ -26,9 +25,11 @@ int BinaryTree::getNumberOfPlayers() {
 
 int BinaryTree::drawBinaryTree() {
     	
-	for(int i = 0; i < (this->getNumberOfPlayers()*2); i++) {
+	for(int i = 0; i <= this->getNumberOfPlayers(); i++) {
 	std::cout << this->getPlayer(i) << std::endl;
-	} 
+	}
+	std::cout << getPlayer(1) << std::endl;
+        std::cout << getNumberOfPlayers() <<std::endl;
 	return 0;
 }
 

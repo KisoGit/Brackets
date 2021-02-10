@@ -8,7 +8,7 @@
 
 class BinaryTree {
 public:
-    explicit BinaryTree(std::string players[]);
+    explicit BinaryTree(std::string players[], int numberOfPlayers);
     std::string* getPlayers();
     std::string getPlayer(int iD);
     int getNumberOfPlayers();

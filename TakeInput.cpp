@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include "TakeInput.h"
 
+
 //CreateMethod which saves the numbers of players given by the user.
 TakeInput::TakeInput() {
     TakeInput::numberOfPlayers = 0;
@@ -16,7 +17,7 @@ std::string* TakeInput::getPlayers() {
     return players;
 }
 
-//Execute this to take the number of players from user..
+//Execute this to get the Players as input from user.
 void TakeInput::gameStart() {
 
     TakeInput::numberOfPlayers = 0;
@@ -38,6 +39,8 @@ void TakeInput::gameStart() {
     {
         std::cout << "Player" << i + 1 << " is " << players[i] << std::endl;
     }
+
+    BinaryTree binaryTree(this->getPlayers(), this->numberOfPlayers);
 }
 
 //Before-game-loop.
@@ -51,10 +54,13 @@ void TakeInput::beforeGameLoop(bool* running) {
     } else if (userCommand.compare("commands") == 0) {
         std::cout << "Enter \"start\" to start a game.\n"
         "Enter \"exit\" to exit this program.\n"
-        "Enter \"commands\" to see a list of all commands." << std::endl;
+        "Enter \"commands\" to see a list of all commands.\n"
+        "Enter \"tree\" to see the current Bracket." << std::endl;
     } else if (userCommand.compare("start") == 0) {
 
-    } else {
+//    } else if (userCommand.compare("tree") == 0) { TODO
+//	    binaryTree.drawBinaryTree();		TODO
+    }else {
         std::cout << "Command not found. \n"
                      "To see a list of all the Commands enter \"commands\" " << std::endl;
     };

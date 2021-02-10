@@ -4,6 +4,7 @@
 
 #pragma once
 #include <string>
+#include "Data/BinaryTree.h"
 
 class TakeInput {
 public:
@@ -21,4 +22,5 @@ private:
         std::string userCommand;
         int numberOfPlayers;
         std::string players[256];
+//	BinaryTree binaryTree;
 };
