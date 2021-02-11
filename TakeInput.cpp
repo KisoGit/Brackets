@@ -12,9 +12,14 @@ TakeInput::TakeInput() {
     TakeInput::numberOfPlayers = 0;
 }
 
+//Return how many players are set as an int
+int TakeInput::getNumberOfPlayers() {
+    return TakeInput::numberOfPlayers;
+}
+
 //Return the players array given by user once to the BinaryTree.
 std::string* TakeInput::getPlayers() {
-    return players;
+    return TakeInput::players;
 }
 
 //Execute this to get the Players as input from user.
@@ -40,7 +45,7 @@ void TakeInput::gameStart() {
         std::cout << "Player" << i + 1 << " is " << players[i] << std::endl;
     }
 
-    BinaryTree binaryTree(this->getPlayers(), this->numberOfPlayers);
+    BinaryTree binaryTree(getPlayers(), TakeInput::getNumberOfPlayers());
 }
 
 //Before-game-loop.
@@ -58,8 +63,8 @@ void TakeInput::beforeGameLoop(bool* running) {
         "Enter \"tree\" to see the current Bracket." << std::endl;
     } else if (userCommand.compare("start") == 0) {
 
-//    } else if (userCommand.compare("tree") == 0) { TODO
-//	    binaryTree.drawBinaryTree();		TODO
+    } else if (userCommand.compare("tree") == 0) {
+	  //  BinaryTree::binaryTree.drawBinaryTree();
     }else {
         std::cout << "Command not found. \n"
                      "To see a list of all the Commands enter \"commands\" " << std::endl;

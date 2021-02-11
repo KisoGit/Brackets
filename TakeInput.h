@@ -14,6 +14,7 @@ public:
     void afterGameLoop(bool*);
     void exit(bool*);
     std::string* getPlayers();
+    int getNumberOfPlayers();
     TakeInput();
 
 
@@ -22,5 +23,5 @@ private:
         std::string userCommand;
         int numberOfPlayers;
         std::string players[256];
-//	BinaryTree binaryTree;
+	BinaryTree binaryTree(std::string players[], int numberOfPlayers);
 };
