@@ -4,7 +4,7 @@
 
 #pragma once
 #include <string>
-#include "Data/BinaryTree.h"
+#include "BinaryTree.h"
 
 class TakeInput {
 public:
